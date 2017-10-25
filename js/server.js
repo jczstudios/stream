@@ -8,7 +8,9 @@ function startStreaming() {
 	      	$('#requesting-permission').addClass('d-none');
 	    	$('#requesting-permission-error').removeClass('d-none');
 		} else {
-
+	      	$('#requesting-permission').addClass('d-none');
+	    	$('#stream-started').removeClass('d-none');
+	    	console.log(response)
 		}
 	});
 }
