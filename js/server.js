@@ -4,7 +4,7 @@ var extensionId = "oflocnpllkmhafmbbhcfkibjmadimlof";
 function startStreaming() {
 	// Initiate the streaming flow
 	chrome.runtime.sendMessage(extensionId, {startStreaming: true}, function(response) {
-		if (response.false) {
+		if (!response) {
 	      	$('#requesting-permission').addClass('d-none');
 	    	$('#requesting-permission-error').removeClass('d-none');
 		} else {
@@ -26,5 +26,6 @@ function checkInstallStatus() {
 }
 
 $(document).ready(function() {
+	console.log('test');
 	checkInstallStatus();
 });
