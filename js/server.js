@@ -15,6 +15,7 @@ function startStreaming() {
 function checkInstallStatus() {
 	// First, we check if the extension is installed.
 	chrome.runtime.sendMessage(extensionId, {isInstalled: true}, function(response) {
+		console.log(response)
 	    if (response) {
 	      $('#installed').removeClass('d-none');
 	      startStreaming();
@@ -25,5 +26,6 @@ function checkInstallStatus() {
 }
 
 $(document).ready(function() {
+	console.log('page load')
 	checkInstallStatus();
 });
